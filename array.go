@@ -47,4 +47,31 @@ func main() {
 	v_IntSlice := v_IntArray1[1:4:9]
 	fmt.Println("v_IntArray[1:4:9]", v_IntSlice)
 	fmt.Println("v_IntArray[1:4:9] len ", len(v_IntSlice))
+	fmt.Println("v_IntArray[1:4:9] len ", cap(v_IntSlice))
+
+	v_IntSlice = v_IntArray1[0:]
+	v_IntSlice[0] = 100
+	fmt.Println(v_IntSlice)
+	fmt.Println("len: ", len(v_IntSlice))
+	fmt.Println("len: ", cap(v_IntSlice))
+
+	v_IntSlice = v_IntArray1[:1]
+	fmt.Println(v_IntSlice)
+	fmt.Println("len: ", len(v_IntSlice))
+	fmt.Println("len: ", cap(v_IntSlice))
+
+	v_IntSlice = v_IntArray1[:4:4]
+	fmt.Println(v_IntSlice)
+	fmt.Println("len: ", len(v_IntSlice))
+	fmt.Println("len: ", cap(v_IntSlice))
+
+	v_IntSlice = make([]int, 5, 10)
+	v_IntSliceAnother := v_IntSlice[3:]
+	v_IntSliceAnother[0] = 100
+	fmt.Println(v_IntSliceAnother)
+	v_IntSliceAnother = append(v_IntSlice, 100)
+	fmt.Println(v_IntSliceAnother)
+	fmt.Println("make([]int, 5, 10), v_IntSlice is: ", v_IntSlice)
+	fmt.Println("make([]int, 5, 10), len(v_IntSlice) is: ", len(v_IntSlice))
+	fmt.Println("make([]int, 5, 10), cap(v_IntSlice) is: ", cap(v_IntSlice))
 }
