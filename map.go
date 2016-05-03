@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	v_map := map[int]string{
@@ -36,4 +38,14 @@ func main() {
 		2: {3, 4, 5},
 	}
 	fmt.Println(v_mapOfArray)
+
+	fmt.Println("v_map:", v_map)
+
+	for key, _ := range v_map {
+		delete(v_map, key)
+		if key == 1 {
+			v_map[key*5] = "new"
+		}
+	}
+	fmt.Println("after v_map:", v_map)
 }
