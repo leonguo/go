@@ -47,6 +47,40 @@ func withClosure(intPara int) func() {
 	return returnFunc
 }
 
+func delayCode() {
+	defer fmt.Println("defer:i will be executed at last")
+	defer fmt.Println("defer:i will be executed at first")
+	fmt.Println("i will be executed before defer")
+
+}
+
+func UseCallback(myfun func()) {
+	myfun()
+}
+
+func useRecursion(num int) int {
+	if num <= 0 {
+		return 0
+	} else if num == 1 || num == 2 {
+		return 1
+	} else {
+		return useRecursion(num-1) + useRecursion(num-2)
+	}
+
+}
+
+type user struct {
+	name string
+}
+
+func (user *user) namechangedto(new string) {
+	user.name = new
+}
+
+func (user *user) getname() string {
+	return user.name
+}
+
 func main() {
 	noReturn()
 	withParamsNoReturn(1, 2, "ok")
@@ -56,4 +90,13 @@ func main() {
 	fmt.Println("the double 10 is:", WithpNamedReturnAndInnerVar(10))
 	WithVariabicPara("test", 1, 2, 3, 4)
 	withClosure(100)()
+
+	delayCode()
+
+	UseCallback(delayCode)
+
+	var user user
+	fmt.Println(user)
+	user.namechangedto("new")
+	fmt.Println("user.name", user.getname())
 }
