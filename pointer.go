@@ -1,8 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unsafe"
+)
 
 func main() {
+	/**
+	 *  *取指针所处的对象
+	 *  &取对象的地址
+	 */
 	var p *int
 	fmt.Println("p is ", p)
 
@@ -14,5 +21,21 @@ func main() {
 	p = &intvar
 	fmt.Println("after assignment p is ", p)
 	fmt.Println("value p point ", *p)
+
+	var strp *[4]byte
+	strp = (*[4]byte)(unsafe.Pointer(p))
+	fmt.Println(strp)
+	fmt.Println(*strp)
+
+	type user struct {
+		name string
+	}
+
+	userp := &user{
+		"xiaoa",
+	}
+	fmt.Println("user point to is ", *userp)
+	userp.name = "dddd"
+	fmt.Println("user point to is ", *userp)
 
 }
