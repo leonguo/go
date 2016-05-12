@@ -43,10 +43,8 @@ func FuncWithGosched(wg *(sync.WaitGroup)) {
 func main() {
 	// goroutine 的个数
 	grCount := 5
-
 	// 设置可以并行运行的核心数
 	runtime.GOMAXPROCS(1)
-
 	// 等待 goroutine 执行结果
 	wg := new(sync.WaitGroup)
 	wg.Add(grCount)
