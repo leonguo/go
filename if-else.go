@@ -19,4 +19,12 @@ func main() {
 	fmt.Println(
 	pow(3,2,10),
 	pow(4,2,12))
+	
+
+	fmt.Println("counting")
+	
+	for i:=0; i<10; i++ {
+		defer fmt.Println(i)
+	}
+	fmt.Println("done")
 }
