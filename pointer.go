@@ -38,4 +38,17 @@ func main() {
 	userp.name = "dddd"
 	fmt.Println("user point to is ", *userp)
 
+	fmt.Println("test-----------------part2---------")
+	
+	i,j := 42,299
+	ppp := &i
+	fmt.Println(*ppp)
+	*ppp = 21 
+	fmt.Println(i)
+	
+	ppp = &j
+	
+	*ppp = *ppp/10
+	fmt.Println(j)
+	
 }
