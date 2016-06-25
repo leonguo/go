@@ -55,4 +55,11 @@ func main() {
 	fmt.Println(g_int, g_bool, g_str)
 
 	fmt.Println(const_str)
+
+	var zz []int
+	fmt.Println(zz, len(zz), cap(zz))
+
+	if zz == nil {
+		fmt.Println("nil")
+	}
 }
