@@ -56,4 +56,21 @@ func main() {
 	}
 
 	fmt.Println(m)
+
+	m := make(map[string]int)
+	m["Answer"] = 42
+	fmt.Println("the value is", m["Answer"])
+
+	m["Answer"] = 48
+	fmt.Println("the value is", m["Answer"])
+
+	v1, ok1 := m["Answer"]
+	fmt.Println("value is", v1, "present", ok1)
+
+	delete(m, "Answer")
+	fmt.Println("the value is", m["Answer"])
+
+	v, ok := m["Answer"]
+	fmt.Println("value is", v, "present", ok)
+
 }
