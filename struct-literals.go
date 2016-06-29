@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 type Vertex struct {
-	X, Y int
+	X, Y float64
 }
 
 type Vertex1 struct {
@@ -27,6 +28,10 @@ var (
 	v3 = Vertex{}
 	p  = &Vertex{1, 2}
 )
+
+func (v *Vertex) Abs() float64 {
+	return math.Sqrt(v.X + v.Y)
+}
 
 func main() {
 	fmt.Println(v1, p, v2, v3)
@@ -73,4 +78,6 @@ func main() {
 	v, ok := m["Answer"]
 	fmt.Println("value is", v, "present", ok)
 
+	value := &Vertex{3, 4}
+	fmt.Println(value.Abs())
 }
