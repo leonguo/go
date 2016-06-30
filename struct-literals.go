@@ -33,6 +33,11 @@ func (v *Vertex) Abs() float64 {
 	return math.Sqrt(v.X + v.Y)
 }
 
+func (v *Vertex) Scale(f float64) {
+	v.X = v.X * f
+	v.Y = v.Y * f
+}
+
 func main() {
 	fmt.Println(v1, p, v2, v3)
 
@@ -80,4 +85,10 @@ func main() {
 
 	value := &Vertex{3, 4}
 	fmt.Println(value.Abs())
+	fmt.Println(value)
+
+	value.Scale(5)
+	fmt.Println(value.Abs())
+	fmt.Println(value)
+
 }
