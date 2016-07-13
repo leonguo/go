@@ -8,6 +8,7 @@ func fibonacci(n int, c chan int) {
 		c <- x
 		x, y = y, x+y
 	}
+	close(c)
 }
 func main() {
 	ch := make(chan int, 2)
