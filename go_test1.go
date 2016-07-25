@@ -7,11 +7,15 @@ import (
 )
 
 type 小学生 struct {
+   姓名 string
 }
 
 func main() {
 	fmt.Println("i am  a function !")
-
+             
+ 	stu := 小学生{"郭兴俊"}
+	fmt.Println(stu)
+       
 	const str = "one world 世界大同"
 	fmt.Println(len(str))
 	fmt.Println(utf8.RuneCountInString(str))
