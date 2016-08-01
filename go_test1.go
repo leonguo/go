@@ -13,8 +13,9 @@ type 小学生 struct {
 func main() {
 	fmt.Println("i am  a function !")
              
- 	stu := 小学生{"郭兴俊"}
-	fmt.Println(stu)
+ 	stu := 小学生{"阿D"}
+	stu.姓名 = "abc"
+	fmt.Println(stu.姓名)
        
 	const str = "one world 世界大同"
 	fmt.Println(len(str))
