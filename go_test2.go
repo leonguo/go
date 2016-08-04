@@ -20,8 +20,31 @@ var i2, i3 = 22, "dd"
 
 var i4, i5 int
 
-func main() {
+var b1 bool
 
+var b2 uint8 //无符号8位整数 2^8 (0-255) byte 的别称
+
+var b3 int8 //无符号8位整数 2^8 (-128-127)
+
+var b4 int32 // rune的别称
+
+func main() {
+	buffer1 := [10]string{}
+
+	intSet := [6]int{1, 2, 3, 4}
+
+	days := [...]string{"Sat", "Sun"}
 	s3 := "hello world"
 	fmt.Println(s3)
+	b1 = true
+	fmt.Println(b1)
+	b2 = 12
+	fmt.Println(b2)
+	fmt.Println(b3)
+	fmt.Println(b4)
+
+	fmt.Println(buffer1)
+	fmt.Println(intSet)
+	fmt.Println(days)
+
 }
