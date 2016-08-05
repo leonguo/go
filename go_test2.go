@@ -47,4 +47,13 @@ func main() {
 	fmt.Println(intSet)
 	fmt.Println(days)
 
+	var s1 []int
+	var s2 = make([]int, 10)
+	var s4 = make([]int, 10, 20)
+
+	fmt.Printf("len:%d, cap:%d\n", len(s1), cap(s1))
+	fmt.Printf("len:%d, cap:%d\n", len(s2), cap(s2))
+
+	fmt.Printf("len:%d, cap:%d\n", len(s3), cap(s4))
+
 }
