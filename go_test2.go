@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+	"unsafe"
+)
 
 //常量的定义
 const i = 1
@@ -27,6 +31,17 @@ var b2 uint8 //无符号8位整数 2^8 (0-255) byte 的别称
 var b3 int8 //无符号8位整数 2^8 (-128-127)
 
 var b4 int32 // rune的别称
+
+func BytesToString(b []byte) string {
+	bytesHeader := (*reflect.SliceHeader)(unsafe.Pointer(&b))
+	strHeader := reflect.StringHeader{bytesHeader.Data, bytesHeader.Len}
+	return *(*string)(unsafe.Pointer(&strHeader))
+}
+func StringToBytes(s string) []byte {
+	strHeader := (*reflect.StringHeader)(unsafe.Pointer(&s))
+	bytesHeader := reflect.SliceHeader{strHeader.Data, strHeader.Len, strHeader.Len}
+	return *(*[]byte)(unsafe.Pointer(&bytesHeader))
+}
 
 func main() {
 	buffer1 := [10]string{}
@@ -55,5 +70,19 @@ func main() {
 	fmt.Printf("len:%d, cap:%d\n", len(s2), cap(s2))
 
 	fmt.Printf("len:%d, cap:%d\n", len(s3), cap(s4))
+
+	z := "hello world"
+
+	z1 := StringToBytes(z)
+	z2 := BytesToString(z1)
+
+	fmt.Println(z1)
+
+	fmt.Printf("%s\n", z2)
+
+	x := 10
+	p := &x
+
+	fmt.Println(p)
 
 }
