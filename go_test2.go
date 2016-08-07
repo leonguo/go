@@ -43,6 +43,10 @@ func StringToBytes(s string) []byte {
 	return *(*[]byte)(unsafe.Pointer(&bytesHeader))
 }
 
+type File interface {
+	Close()
+}
+
 func main() {
 	buffer1 := [10]string{}
 
@@ -84,5 +88,10 @@ func main() {
 	p := &x
 
 	fmt.Println(p)
+	//Map是一组无序的键值对的集合。键的类型相同，值的类型也相同。
+	m1 := make(map[int]int, 10)
+	m1[0] = 1
+	m1[1] = 2
+	fmt.Println(m1)
 
 }
