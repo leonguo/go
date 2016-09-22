@@ -22,7 +22,14 @@ func main() {
 		return
 	}
 	defer c.Close()
-	fmt.Println(v)
+
+	values, _ := redis.Values(c.Do("lrange", "redlist", "0", "100"))
+	for _, v := range values {
+		fmt.Println(string(v.([]byte)))
+	}
+	//或者
+	var v1 string
+	redis.Scan(values, &v1)
 
 	fmt.Println("rest")
 }

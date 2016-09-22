@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	var emptystring string
@@ -49,4 +52,11 @@ func main() {
 	fmt.Println(true || false)
 
 	fmt.Println(!true)
+
+	var ss [10]string
+	ss[0] = "dada"
+	ss[1] = "dagggg"
+
+	sort.Sort(sort.Reverse(sort.StringSlice(ss)))
+	fmt.Println(ss)
 }
