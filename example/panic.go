@@ -13,5 +13,6 @@ func SimplePanicRecover() {
 
 func main() {
 	SimplePanicRecover()
-
+	test := fmt.Sprintf("test ddd %d",2)
+	fmt.Printf(test)
 }
