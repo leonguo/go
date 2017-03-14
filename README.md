@@ -17,4 +17,10 @@
        - 首字母小写：findById
        - 常量首字母大写,驼峰式： MaxLength
        - 错误字符串开头小写 fmt.Errorf("failed to write data")
-
+       - 声明空的slice
+       <pre><code>
+       正确:
+            var t []string
+       长度为0的slice:
+            t := []string{}
+       </code></pre>
