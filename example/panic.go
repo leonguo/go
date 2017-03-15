@@ -30,5 +30,6 @@ func main() {
 
 	user := GetUser()
 	fmt.Println(user.UserId)
+	fmt.Println(user.UserName)
 	fmt.Println(user)
 }
