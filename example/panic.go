@@ -2,9 +2,8 @@ package main
 
 import "fmt"
 
-
 type User struct {
-	UserId int
+	UserId   int
 	UserName string
 }
 
@@ -17,7 +16,7 @@ func SimplePanicRecover() {
 	panic("SimplePanicRecover function ed")
 }
 
-func GetUser()(user User) {
+func GetUser() (user User) {
 	user = User{}
 	user.UserId = 1
 	user.UserName = "gg"
@@ -26,7 +25,7 @@ func GetUser()(user User) {
 
 func main() {
 	SimplePanicRecover()
-	test := fmt.Sprintf("test ddd %d",2)
+	test := fmt.Sprintf("test ddd %d", 2)
 	fmt.Printf(test)
 
 	user := GetUser()
