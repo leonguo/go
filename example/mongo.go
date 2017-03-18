@@ -43,5 +43,6 @@ func main() {
 	   or($or)
 
 		c.Find(bson.M{"$or": []bson.M{bson.M{"name": "Jimmy Kuu"}, bson.M{"age": 31}}}).All(&users)
+	   pipe 管道 分组查询
 	 */
 }
