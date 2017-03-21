@@ -24,3 +24,4 @@
        长度为0的slice:
             t := []string{}
        </code></pre>
+       - 报名称使用单数 例如model而不是models
