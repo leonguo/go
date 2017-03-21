@@ -25,3 +25,13 @@
             t := []string{}
        </code></pre>
        - 报名称使用单数 例如model而不是models
+   - 代码片段
+     - 包含 分割字符串
+     <pre><code>
+     str := "223,344,"
+	 fmt.Println(strings.Contains(str,","))
+	 s := strings.Split(str,",")
+	 for j := 0; j< len(s) ; j++  {
+		fmt.Println(s[j])
+	 }
+     </code></pre>
