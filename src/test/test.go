@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	c, err := mongodb.Dial("localhost", 10)
+	c, err := mongodb.Dial("120.24.229.18", 10)
 	if err != nil {
 		fmt.Println(err)
 		return
