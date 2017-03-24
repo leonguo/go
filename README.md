@@ -2,8 +2,7 @@
 
 - go知识归纳
  - go基本概念
-   - GOPATH 配置工作目录
-   - 常用基本命令
+   - [常用基本命令](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/01.3.md)
        - go build 编译包
             - 参数 -o output指定输出名称，代替默认包名
             - 参数 -i 安装相应的包，编译+go install
@@ -13,7 +12,11 @@
             - -d 只下载不安装
             - -u 强制使用网络去更新包和它的依赖包
             - -v 显示执行的命令
-       - go 
+       - go clean
+            - -i 清除关联的包和可运行的文件
+            - -n 把需要执行的清除命令打印出来。
+       - go fmt 
+            - gofmt -w -l src 格式化整个项目
    - 工作目录下结构
        - src 存放源代码，多项目可以分多个子目录
        - pkg 编译后生产的文件 
