@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"db/mongodb"
+	"godoc/db/mongodb"
 	"gopkg.in/mgo.v2"
 )
 
