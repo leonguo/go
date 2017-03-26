@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"godoc/db/mongodb"
 	"gopkg.in/mgo.v2"
+	"gopkg.in/mgo.v2/bson"
 )
 
 func main() {
@@ -41,6 +42,15 @@ func main() {
 	// index
 	c.EnsureUniqueIndex("test", "counters", []string{"key1"})
 
+	type Counter struct {
+		Id bson.ObjectId "_id"
+		Seq int
+	}
+	result := Counter{}
+	selecter := bson.M{}
+	s.DB("test").C("counters").Find(selecter).One(&result)
+	fmt.Println(result.Id)
+	fmt.Println(result.Seq)
 	// Output:
 	// 1
 	// 2
