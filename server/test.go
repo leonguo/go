@@ -57,25 +57,20 @@ func main() {
 	//fmt.Println(result.Seq)
 
 	users := Users{}
-	selecter := bson.M{"user_name":"ggg1", "age":20}
+	selecter := bson.M{"user_name":"ggg", "age":20}
 	err = s.DB("test").C("users").Insert(selecter)
 	fmt.Println(err)
 
-	selecter = bson.M{"user_name":"ggg1"}
-	info, err := s.DB("test").C("users").RemoveAll(selecter)
-	fmt.Println(info)
-	fmt.Println(err)
+	//selecter = bson.M{"user_name":"ggg"}
+	//update := bson.M{"$set":bson.M{"age":21}}
+	//err = s.DB("test").C("users").Update(selecter, update)
+	//fmt.Println(err)
 
 	selecter = bson.M{"user_name":"ggg"}
-	update := bson.M{"$set":bson.M{"age":21}}
-	err = s.DB("test").C("users").Update(selecter, update)
-	fmt.Println(err)
-
-	selecter = bson.M{"user_name":"ggg"}
-	err = s.DB("test").C("users").Find(selecter).Sort("_id").One(&users)
-
-	fmt.Printf("age :%v, user_name :%v", users.Age, users.Username)
-
+	iter := s.DB("test").C("users").Find(selecter).Sort("_id").Iter()
+	for iter.Next(&users) {
+		fmt.Printf("users name: %v age: %v\n",users.Username,users.Age)
+	}
 
 	// Output:
 	// 1
