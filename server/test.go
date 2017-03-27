@@ -43,14 +43,40 @@ func main() {
 	c.EnsureUniqueIndex("test", "counters", []string{"key1"})
 
 	type Counter struct {
-		Id bson.ObjectId "_id"
+		Id  bson.ObjectId "_id"
 		Seq int
 	}
-	result := Counter{}
-	selecter := bson.M{"_id":"test"}
-	s.DB("test").C("counters").Find(selecter).One(&result)
-	fmt.Println(result.Id)
-	fmt.Println(result.Seq)
+	type Users struct {
+		Username string "user_name"
+		Age      int        "age"
+	}
+	//result := Counter{}
+	//selecter := bson.M{"_id":"test"}
+	//s.DB("test").C("counters").Find(selecter).One(&result)
+	//fmt.Println(result.Id)
+	//fmt.Println(result.Seq)
+
+	users := Users{}
+	selecter := bson.M{"user_name":"ggg1", "age":20}
+	err = s.DB("test").C("users").Insert(selecter)
+	fmt.Println(err)
+
+	selecter = bson.M{"user_name":"ggg1"}
+	info, err := s.DB("test").C("users").RemoveAll(selecter)
+	fmt.Println(info)
+	fmt.Println(err)
+
+	selecter = bson.M{"user_name":"ggg"}
+	update := bson.M{"$set":bson.M{"age":21}}
+	err = s.DB("test").C("users").Update(selecter, update)
+	fmt.Println(err)
+
+	selecter = bson.M{"user_name":"ggg"}
+	err = s.DB("test").C("users").Find(selecter).Sort("_id").One(&users)
+
+	fmt.Printf("age :%v, user_name :%v", users.Age, users.Username)
+
+
 	// Output:
 	// 1
 	// 2
