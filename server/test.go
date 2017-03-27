@@ -47,7 +47,7 @@ func main() {
 		Seq int
 	}
 	result := Counter{}
-	selecter := bson.M{}
+	selecter := bson.M{"_id":"test"}
 	s.DB("test").C("counters").Find(selecter).One(&result)
 	fmt.Println(result.Id)
 	fmt.Println(result.Seq)
