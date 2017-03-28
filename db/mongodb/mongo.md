@@ -8,42 +8,51 @@
 	users := []User{}
 
 ## 查询 find
+   - 查找一个
     
-    - 查找一个
     selecter := bson.M{"_id":"test"}
     err = s.DB("test").C("counters").Find(selecter).One(&result)
     
-    - 根据objectId查找
+   - 根据objectId查找
+   
     err = s.DB("test").C("users").FindId("58d9024569ad41655482e5df").One(&users)
     
-    - 查找多个
+   - 查找多个
+   
     selecter = bson.M{"user_name":"ggg"}
     iter := s.DB("test").C("users").Find(selecter).Sort("_id").Iter()
     for iter.Next(&users) {
         fmt.Printf("users name: %v age: %v\n",users.Username,users.Age)
     }
     
-    - 单条件查找 等于=
+   - 单条件查找 等于=
+   
     selecter := bson.M{"user_name":"ggg"}
     err = s.DB("test").C("users").Find(selecter).All(&users)
     fmt.Printf("%v", users)
     
-    - 单条件查找 不等于!= $ne
+   - 单条件查找 不等于!= $ne
+   
     selecter := bson.M{"user_name":bson.M{"$ne":"ggg"}}
     
-    - 单条件查找 >($gt)  >=($gte)  <=($lte) <(lt) 
+   - 单条件查找 >($gt)  >=($gte)  <=($lte) <(lt)
+   
     selecter := bson.M{"age":bson.M{"$gte":"10"}}    
     
-    - 单条件查找 in
+   - 单条件查找 in
+   
     selecter := bson.M{"user_name":bson.M{"$in":[]{"ggg","ggg1"}}}
     
-    - 多条件查询 and
+   - 多条件查询 and
+   
     selecter := bson.M{"user_name":"ggg","age":20}
     
-    - 多条件查询 or
+   - 多条件查询 or
+   
     selecter := bson.M{"$or":[]bson.M{bson.M{"user_name":"ggg"},bson.M{"age":20}}}
     
-    - 分组查询
+   - 分组查询
+   
     match := bson.M{"user_name" : "ggg"}
     group := bson.M{
             "_id":  nil,
@@ -66,7 +75,10 @@
     selecter := bson.M{"user_name":"ggg","age":20}
     err = s.DB("test").C("users").Insert(selecter)
     
-## 更新 update 更新（$set）+1($inc) 数组增加一个元素($push) 数组删除一个元素($pull)
+## 更新 update 
+
+   - 更新（$set）+1($inc) 数组增加一个元素($push) 数组删除一个元素($pull)
+  
     selecter = bson.M{"user_name":"ggg"}
     update := bson.M{"$set":bson.M{"age":21}}
     err = s.DB("test").C("users").Update(selecter, update)
