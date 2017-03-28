@@ -8,8 +8,9 @@
 	users := []User{}
 
 ## 查询 find
+
    - 查找一个
-    
+
     selecter := bson.M{"_id":"test"}
     err = s.DB("test").C("counters").Find(selecter).One(&result)
     
