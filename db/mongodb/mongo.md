@@ -1,4 +1,4 @@
-# mongodb在golang的使用方式
+# mongodb在golang的应用
 
 ## 定义结构体
     type User struct {
