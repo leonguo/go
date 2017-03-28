@@ -77,7 +77,7 @@
     
 ## 更新 update 
 
-   - 更新（$set）+1($inc) 数组增加一个元素($push) 数组删除一个元素($pull)
+   - 更新（$set）增加数量($inc) 数组增加一个元素($push) 数组删除一个元素($pull)
   
     selecter = bson.M{"user_name":"ggg"}
     update := bson.M{"$set":bson.M{"age":21}}
