@@ -17,6 +17,11 @@
             - -n 把需要执行的清除命令打印出来。
        - go fmt 
             - gofmt -w -l src 格式化整个项目
+       - go tool
+            - go tool fix 修复以前老版本代码到新版本
+            - go tool vet directory|files 分析代码是否正确 例如fmt.Printf参数是否正确
+         
+
    - 工作目录下结构
        - src 存放源代码，多项目可以分多个子目录
        - pkg 编译后生产的文件 
