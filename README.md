@@ -20,7 +20,7 @@
        - go tool
             - go tool fix 修复以前老版本代码到新版本
             - go tool vet directory|files 分析代码是否正确 例如fmt.Printf参数是否正确
-         
+
 
    - 工作目录下结构
        - src 存放源代码，多项目可以分多个子目录
@@ -28,10 +28,12 @@
        - bin 编译后生产的可执行文件
 
 - [go代码规范](http://colobu.com/2017/02/07/write-idiomatic-golang-codes/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+
    - 注释
        - /** .....  **/ 注释片段、包名解释等
        - // 某段说明. 开头留一个空格
-   - 字符串
+
+   - 常用规范
        - 缩写词保持一致,例如URL
        - 首字母小写: findById
        - 常量首字母大写,驼峰式: MaxLength
@@ -43,7 +45,13 @@
        长度为0的slice:
             t := []string{}
        </code></pre>
-       - 报名称使用单数 例如model而不是models
+
+   - 代码规范
+       - 包名称使用单数 例如model而不是models
+       -
+
+
+
    - 代码片段
      - 包含 分割字符串
      <pre><code>
