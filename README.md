@@ -48,9 +48,14 @@
 
    - 代码规范
        - 包名称使用单数 例如model而不是models
-       -
-
-
+       - 定义包级别的错误变量
+       ```
+       var (
+	        ErrCacheMiss = errors.New("memcache: cache miss")
+	        ErrCASConflict = errors.New("memcache: compare-and-swap conflict")
+	        ErrNotStored = errors.New("memcache: item not stored")
+	   )
+       ```
 
    - 代码片段
      - 包含 分割字符串
