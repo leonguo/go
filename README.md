@@ -56,6 +56,16 @@
 	        ErrNotStored = errors.New("memcache: item not stored")
 	   )
        ```
+       - 定义结构体
+       ```
+       // omitempty 如果为空则忽略
+       type T struct {
+           A bool
+           B int    "myb"                     //默认0
+           C string "myc,omitempty"           //默认""
+           D string `bson:",omitempty" json:"jsonkey"`
+       }
+       ```
        - 常用构造对象方式
        ```
        func NewUser(name string, age int) *User {
