@@ -56,6 +56,15 @@
 	        ErrNotStored = errors.New("memcache: item not stored")
 	   )
        ```
+       - 常用构造对象方式
+       ```
+       func NewUser(name string, age int) *User {
+           return &User{
+               Name: name,
+               age:  age,
+           }
+       }
+       ```
 
    - 代码片段
      - 包含 分割字符串
