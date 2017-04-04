@@ -86,3 +86,29 @@
 		fmt.Println(s[j])
 	 }
      </code></pre>
+     - 线程安全
+     ```
+     type safepending struct {
+         pending int
+         mutex   sync.RWMutex
+     }
+
+     func (s *safepending) Inc() {
+         s.mutex.Lock()
+         s.pending++
+         s.mutex.Unlock()
+     }
+
+     func (s *safepending) Dec() {
+         s.mutex.Lock()
+         s.pending--
+         s.mutex.Unlock()
+     }
+
+     func (s *safepending) Get() int {
+         s.mutex.RLock()
+         n := s.pending
+         s.mutex.RUnlock()
+         return n
+     }
+     ```
