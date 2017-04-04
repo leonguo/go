@@ -111,4 +111,28 @@
          s.mutex.RUnlock()
          return n
      }
+     嵌套写法
+     type safepending struct {
+         pending int
+         sync.RWMutex
+     }
+
+     func (s *safepending) Inc() {
+         s.Lock()
+         s.pending++
+         s.Unlock()
+     }
+
+     func (s *safepending) Dec() {
+         s.Lock()
+         s.pending--
+         s.Unlock()
+     }
+
+     func (s *safepending) Get() int {
+         s.RLock()
+         n := s.pending
+         s.RUnlock()
+         return n
+     }
      ```
