@@ -86,7 +86,7 @@
 		fmt.Println(s[j])
 	 }
      </code></pre>
-     - 线程安全
+     - 线程安全的整型
      ```
      type safepending struct {
          pending int
