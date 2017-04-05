@@ -71,6 +71,8 @@
     for iter.Next(&user) {
         fmt.Printf("users name: %v age: %v\n",user.Username,user.AvgAge)
     }
+
+    管道增加group可对分组后的数据统计
     
 ## 新增 insert   
     selecter := bson.M{"user_name":"ggg","age":20}
