@@ -78,6 +78,7 @@
 
    - 代码片段
      - 包含 分割字符串
+     <details>
      <pre><code>
      str := "223,344,"
 	 fmt.Println(strings.Contains(str,","))
@@ -86,12 +87,10 @@
 		fmt.Println(s[j])
 	 }
      </code></pre>
-     - 线程安全的整型
      </details>
-
-     - 线程安全
+     - 线程安全的整型
      <details>
-     ```
+     <code>
      type safepending struct {
          pending int
          mutex   sync.RWMutex
@@ -139,7 +138,7 @@
          s.RUnlock()
          return n
      }
-     ```
+     </code>
      </details>
 
-   - mongodb在golang中的应用
+   - [mongodb在golang中的应用](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
