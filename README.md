@@ -87,6 +87,10 @@
 	 }
      </code></pre>
      - 线程安全的整型
+     </details>
+
+     - 线程安全
+     <details>
      ```
      type safepending struct {
          pending int
@@ -136,3 +140,6 @@
          return n
      }
      ```
+     </details>
+
+   - mongodb在golang中的应用
