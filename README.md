@@ -1,8 +1,8 @@
 # learn go
 
 - go知识归纳
- - go基本概念
-   - [常用基本命令](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/01.3.md)
+  - go基本概念
+    - [常用基本命令](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/01.3.md)
        - go build 编译包
             - 参数 -o output指定输出名称，代替默认包名
             - 参数 -i 安装相应的包，编译+go install
@@ -22,7 +22,7 @@
             - go tool vet directory|files 分析代码是否正确 例如fmt.Printf参数是否正确
 
 
-   - 工作目录下结构
+    - 工作目录下结构
        - src 存放源代码，多项目可以分多个子目录
        - pkg 编译后生产的文件 
        - bin 编译后生产的可执行文件
