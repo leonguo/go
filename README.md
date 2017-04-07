@@ -77,8 +77,8 @@
        ```
 
    - 代码片段
-     - 包含 分割字符串
      <details>
+     <summary>分割字符串</summary>
      <pre><code>
      str := "223,344,"
 	 fmt.Println(strings.Contains(str,","))
@@ -88,26 +88,24 @@
 	 }
      </code></pre>
      </details>
-     - 线程安全的整型
+
      <details>
+     <summary>线程安全的整型</summary>
      <code>
      type safepending struct {
          pending int
          mutex   sync.RWMutex
      }
-
      func (s *safepending) Inc() {
          s.mutex.Lock()
          s.pending++
          s.mutex.Unlock()
      }
-
      func (s *safepending) Dec() {
          s.mutex.Lock()
          s.pending--
          s.mutex.Unlock()
      }
-
      func (s *safepending) Get() int {
          s.mutex.RLock()
          n := s.pending
@@ -119,19 +117,16 @@
          pending int
          sync.RWMutex
      }
-
      func (s *safepending) Inc() {
          s.Lock()
          s.pending++
          s.Unlock()
      }
-
      func (s *safepending) Dec() {
          s.Lock()
          s.pending--
          s.Unlock()
      }
-
      func (s *safepending) Get() int {
          s.RLock()
          n := s.pending
