@@ -91,7 +91,7 @@
 
      <details>
      <summary>线程安全的整型</summary>
-     <code>
+     <pre><code>
      type safepending struct {
          pending int
          mutex   sync.RWMutex
@@ -133,7 +133,7 @@
          s.RUnlock()
          return n
      }
-     </code>
+     </code></pre>
      </details>
 
    - [mongodb在golang中的应用](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
