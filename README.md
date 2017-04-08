@@ -136,4 +136,4 @@
      </code></pre>
      </details>
 
-   - [mongodb在golang中的应用](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
+   - [mongodb实战](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
