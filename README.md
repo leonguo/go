@@ -139,6 +139,9 @@
        <summary>判断map值是否为空</summary>
        <pre><code>
             value, ok := myMap[myKey]
+            if ok {
+                //存在
+            }
        </code></pre>
      </details>
    - [mongodb实战](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
