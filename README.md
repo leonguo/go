@@ -77,71 +77,73 @@
        ```
 
    - 代码片段
-     <details>
-     <summary>分割字符串</summary>
-     <pre><code>
-     str := "223,344,"
-	 fmt.Println(strings.Contains(str,","))
-	 s := strings.Split(str,",")
-	 for j := 0; j< len(s) ; j++  {
-		fmt.Println(s[j])
-	 }
-     </code></pre>
-     </details>
+         <details>
+         <summary>分割字符串</summary>
+         <pre><code>
+         str := "223,344,"
+         fmt.Println(strings.Contains(str,","))
+         s := strings.Split(str,",")
+         for j := 0; j< len(s) ; j++  {
+            fmt.Println(s[j])
+         }
+         </code></pre>
+         </details>
 
-     <details>
-     <summary>线程安全的整型</summary>
-     <pre><code>
-     type safepending struct {
-         pending int
-         mutex   sync.RWMutex
-     }
-     func (s *safepending) Inc() {
-         s.mutex.Lock()
-         s.pending++
-         s.mutex.Unlock()
-     }
-     func (s *safepending) Dec() {
-         s.mutex.Lock()
-         s.pending--
-         s.mutex.Unlock()
-     }
-     func (s *safepending) Get() int {
-         s.mutex.RLock()
-         n := s.pending
-         s.mutex.RUnlock()
-         return n
-     }
-     嵌套写法
-     type safepending struct {
-         pending int
-         sync.RWMutex
-     }
-     func (s *safepending) Inc() {
-         s.Lock()
-         s.pending++
-         s.Unlock()
-     }
-     func (s *safepending) Dec() {
-         s.Lock()
-         s.pending--
-         s.Unlock()
-     }
-     func (s *safepending) Get() int {
-         s.RLock()
-         n := s.pending
-         s.RUnlock()
-         return n
-     }
-     </code></pre>
-     </details>
-     <details>
-       <summary>判断map值是否为空</summary>
-       <pre><code>
-            value, ok := myMap[myKey]
-            if ok {
-                //存在
-            }
-       </code></pre>
-     </details>
+         <details>
+         <summary>线程安全的整型</summary>
+         <pre><code>
+         type safepending struct {
+             pending int
+             mutex   sync.RWMutex
+         }
+         func (s *safepending) Inc() {
+             s.mutex.Lock()
+             s.pending++
+             s.mutex.Unlock()
+         }
+         func (s *safepending) Dec() {
+             s.mutex.Lock()
+             s.pending--
+             s.mutex.Unlock()
+         }
+         func (s *safepending) Get() int {
+             s.mutex.RLock()
+             n := s.pending
+             s.mutex.RUnlock()
+             return n
+         }
+         嵌套写法
+         type safepending struct {
+             pending int
+             sync.RWMutex
+         }
+         func (s *safepending) Inc() {
+             s.Lock()
+             s.pending++
+             s.Unlock()
+         }
+         func (s *safepending) Dec() {
+             s.Lock()
+             s.pending--
+             s.Unlock()
+         }
+         func (s *safepending) Get() int {
+             s.RLock()
+             n := s.pending
+             s.RUnlock()
+             return n
+         }
+         </code></pre>
+         </details>
+         <details>
+           <summary>判断map值是否为空</summary>
+           <pre><code>
+                value, ok := myMap[myKey]
+                if ok {
+                    //存在
+                }
+           </code></pre>
+         </details>
+
    - [mongodb实战](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
+   - [mysql实战](https://github.com/leonguo/go/blob/master/db/mysql/mysql.md)
