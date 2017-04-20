@@ -147,3 +147,7 @@
 
    - [mongodb实战](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
    - [mysql实战](https://github.com/leonguo/go/blob/master/db/mysql/mysql.md)
+
+
+   - 常用工具
+        - [包管理工具glide](http://www.jianshu.com/p/5e681d3906f0)
