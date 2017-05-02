@@ -144,6 +144,18 @@
                 }
            </code></pre>
          </details>
+         <details>
+           <summary>打印程序执行时间</summary>
+           <pre><code>
+                start := time.Now()
+                         	for i := 0;i< 100000 ;i++  {
+                         		dao.session.Ping()
+                         	}
+                         	end := time.Now()
+                         	delta := end.Sub(start)
+                         	fmt.Printf("longCalculation took this amount of time: %s\n", delta)
+           </code></pre>
+         </details>
 
    - [mongodb实战](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
    - [mysql实战](https://github.com/leonguo/go/blob/master/db/mysql/mysql.md)
