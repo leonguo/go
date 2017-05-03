@@ -164,6 +164,16 @@
                 }
            </code></pre>
          </details>
+         <details>
+           <summary>一维数组变二维数组</summary>
+           <pre><code>
+                result, err := db.All()
+                data := make(map[string][]string)
+                for _ , value := range result {
+                    data[value.Platform] = append(data[value.Platform], value.Version)
+                }
+           </code></pre>
+         </details>
 
    - [mongodb实战](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
    - [mysql实战](https://github.com/leonguo/go/blob/master/db/mysql/mysql.md)
