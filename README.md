@@ -165,7 +165,7 @@
            </code></pre>
          </details>
          <details>
-           <summary>一维数组变二维数组</summary>
+           <summary>重组一维数组,相同的属性为key</summary>
            <pre><code>
                 result, err := db.All()
                 data := make(map[string][]string)
