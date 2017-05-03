@@ -148,12 +148,20 @@
            <summary>打印程序执行时间</summary>
            <pre><code>
                 start := time.Now()
-                         	for i := 0;i< 100000 ;i++  {
-                         		dao.session.Ping()
-                         	}
-                         	end := time.Now()
-                         	delta := end.Sub(start)
-                         	fmt.Printf("longCalculation took this amount of time: %s\n", delta)
+                for i := 0;i< 100000 ;i++  {
+                    dao.session.Ping()
+                }
+                end := time.Now()
+                delta := end.Sub(start)
+                fmt.Printf("longCalculation took this amount of time: %s\n", delta)
+           </code></pre>
+         </details>
+         <details>
+           <summary>mongodb重连</summary>
+           <pre><code>
+                if err := dao.session.Ping(); err != nil {
+                    session.session.Refresh()
+                }
            </code></pre>
          </details>
 
