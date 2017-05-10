@@ -174,6 +174,47 @@
                 }
            </code></pre>
          </details>
+         <details>
+        <summary>对map数组增删改查</summary>
+        <pre><code>
+             type MIMEHeader map[string][]string
+             // Add adds the key, value pair to the header.
+             // It appends to any existing values associated with key.
+             func (h MIMEHeader) Add(key, value string) {
+                key = CanonicalMIMEHeaderKey(key)
+                h[key] = append(h[key], value)
+             }
+
+             // Set sets the header entries associated with key to
+             // the single element value. It replaces any existing
+             // values associated with key.
+             func (h MIMEHeader) Set(key, value string) {
+                h[CanonicalMIMEHeaderKey(key)] = []string{value}
+             }
+
+             // Get gets the first value associated with the given key.
+             // It is case insensitive; CanonicalMIMEHeaderKey is used
+             // to canonicalize the provided key.
+             // If there are no values associated with the key, Get returns "".
+             // To access multiple values of a key, or to use non-canonical keys,
+             // access the map directly.
+             func (h MIMEHeader) Get(key string) string {
+                if h == nil {
+                    return ""
+                }
+                v := h[CanonicalMIMEHeaderKey(key)]
+                if len(v) == 0 {
+                    return ""
+                }
+                return v[0]
+             }
+
+             // Del deletes the values associated with key.
+             func (h MIMEHeader) Del(key string) {
+                delete(h, CanonicalMIMEHeaderKey(key))
+             }
+        </code></pre>
+        </details>
 
    - [mongodb实战](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
    - [mysql实战](https://github.com/leonguo/go/blob/master/db/mysql/mysql.md)
