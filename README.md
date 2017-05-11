@@ -77,66 +77,66 @@
        ```
 
    - 代码片段
-         <details>
+        <details>
          <summary>分割字符串</summary>
-         <pre><code>
-         str := "223,344,"
-         fmt.Println(strings.Contains(str,","))
-         s := strings.Split(str,",")
-         for j := 0; j< len(s) ; j++  {
-            fmt.Println(s[j])
-         }
-         </code></pre>
-         </details>
+             <pre><code>
+                 str := "223,344,"
+                 fmt.Println(strings.Contains(str,","))
+                 s := strings.Split(str,",")
+                 for j := 0; j< len(s) ; j++  {
+                    fmt.Println(s[j])
+                 }
+             </code></pre>
+        </details>
 
-         <details>
-         <summary>线程安全的整型</summary>
-         <pre><code>
-         type safepending struct {
-             pending int
-             mutex   sync.RWMutex
-         }
-         func (s *safepending) Inc() {
-             s.mutex.Lock()
-             s.pending++
-             s.mutex.Unlock()
-         }
-         func (s *safepending) Dec() {
-             s.mutex.Lock()
-             s.pending--
-             s.mutex.Unlock()
-         }
-         func (s *safepending) Get() int {
-             s.mutex.RLock()
-             n := s.pending
-             s.mutex.RUnlock()
-             return n
-         }
-         嵌套写法
-         type safepending struct {
-             pending int
-             sync.RWMutex
-         }
-         func (s *safepending) Inc() {
-             s.Lock()
-             s.pending++
-             s.Unlock()
-         }
-         func (s *safepending) Dec() {
-             s.Lock()
-             s.pending--
-             s.Unlock()
-         }
-         func (s *safepending) Get() int {
-             s.RLock()
-             n := s.pending
-             s.RUnlock()
-             return n
-         }
-         </code></pre>
-         </details>
+        <details>
+             <summary>线程安全的整型</summary>
+             <pre><code>
+             type safepending struct {
+                 pending int
+                 mutex   sync.RWMutex
+             }
+             func (s *safepending) Inc() {
+                 s.mutex.Lock()
+                 s.pending++
+                 s.mutex.Unlock()
+             }
+             func (s *safepending) Dec() {
+                 s.mutex.Lock()
+                 s.pending--
+                 s.mutex.Unlock()
+             }
+             func (s *safepending) Get() int {
+                 s.mutex.RLock()
+                 n := s.pending
+                 s.mutex.RUnlock()
+                 return n
+             }
+             嵌套写法
+             type safepending struct {
+                 pending int
+                 sync.RWMutex
+             }
+             func (s *safepending) Inc() {
+                 s.Lock()
+                 s.pending++
+                 s.Unlock()
+             }
+             func (s *safepending) Dec() {
+                 s.Lock()
+                 s.pending--
+                 s.Unlock()
+             }
+             func (s *safepending) Get() int {
+                 s.RLock()
+                 n := s.pending
+                 s.RUnlock()
+                 return n
+             }
+             </code></pre>
+        </details>
 
-         <details>
+        <details>
            <summary>判断map值是否为空</summary>
            <pre><code>
                 value, ok := myMap[myKey]
@@ -144,9 +144,9 @@
                     //存在
                 }
            </code></pre>
-         </details>
+        </details>
 
-         <details>
+        <details>
            <summary>打印程序执行时间</summary>
            <pre><code>
                 start := time.Now()
@@ -157,18 +157,18 @@
                 delta := end.Sub(start)
                 fmt.Printf("longCalculation took this amount of time: %s\n", delta)
            </code></pre>
-         </details>
+        </details>
 
-         <details>
+        <details>
            <summary>mongodb重连</summary>
            <pre><code>
                 if err := dao.session.Ping(); err != nil {
                     session.session.Refresh()
                 }
            </code></pre>
-         </details>
+        </details>
 
-         <details>
+        <details>
            <summary>重组一维数组,相同的属性为key</summary>
            <pre><code>
                 result, err := db.All()
@@ -177,7 +177,7 @@
                     data[value.Platform] = append(data[value.Platform], value.Version)
                 }
            </code></pre>
-         </details>
+        </details>
 
         <details>
         <summary>对map数组增删改查</summary>
