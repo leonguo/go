@@ -190,14 +190,12 @@
                 key = CanonicalMIMEHeaderKey(key)
                 h[key] = append(h[key], value)
              }
-
              // Set sets the header entries associated with key to
              // the single element value. It replaces any existing
              // values associated with key.
              func (h MIMEHeader) Set(key, value string) {
                 h[CanonicalMIMEHeaderKey(key)] = []string{value}
              }
-
              // Get gets the first value associated with the given key.
              // It is case insensitive; CanonicalMIMEHeaderKey is used
              // to canonicalize the provided key.
@@ -214,7 +212,6 @@
                 }
                 return v[0]
              }
-
              // Del deletes the values associated with key.
              func (h MIMEHeader) Del(key string) {
                 delete(h, CanonicalMIMEHeaderKey(key))
