@@ -177,7 +177,8 @@
          <details>
         <summary>对map数组增删改查</summary>
         <pre><code>
-             // type MIMEHeader map[string][]string
+             // 定义map
+             type MIMEHeader map[string][]string
              // Add adds the key, value pair to the header.
              // It appends to any existing values associated with key.
              func (h MIMEHeader) Add(key, value string) {
