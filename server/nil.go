@@ -1,0 +1,66 @@
+package main
+
+import (
+	"fmt"
+)
+
+type NothingAtAll []struct{}
+
+func main() {
+	//var name string
+	//if name == nil {   //ERROR
+	//	fmt.Println("the string is nil")
+	//}
+
+	var name1 func()
+
+	if name1 == nil {
+		fmt.Println("the name1 is nil")
+	}
+
+	var nillable chan int
+
+	if nillable == nil {
+		fmt.Println("the nillable is nil")
+	}
+
+	var e NothingAtAll
+
+	if e == nil {
+		fmt.Println("NothingAtAll is  Nil")
+	}
+
+	fmt.Println("## nil value:")
+	var x []struct{}
+	fmt.Printf("type(val): %#v\n", x)
+	check := x == nil
+	fmt.Println("does value == nil", check)
+	foo(x)
+
+	fmt.Println("\n## nil type:")
+	fmt.Printf("type(val): %#v\n", nil)
+	fmt.Println("does value == nil", true)
+	//var y chan int
+	foo(nil)
+
+	/**
+		在函数返回值中 如有判断nil的情况下 在函数里判断后在返回
+		func (OsFs) Open(name string) (File, error) {
+		    f, e := os.Open(name)
+
+		    if f == nil {
+			return nil, e
+		    }
+		    return f, e
+		}
+	 */
+
+}
+
+func foo(in interface{}) {
+	if in != nil {
+		fmt.Println("Not Nil")
+	} else {
+		fmt.Println("Nil")
+	}
+}
