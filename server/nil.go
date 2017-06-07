@@ -45,6 +45,13 @@ func main() {
 
 	/**
 		在函数返回值中 如有判断nil的情况下 在函数里判断后在返回
+		func test() error {
+			var p *data = nil
+			return p
+		}
+		error是一个接口类型，test方法中返回的指针p虽然数据是nil，
+		但是由于它被返回成包装的error类型，也即它是有类型的。
+		所以它的底层结构应该是(*data, nil)，很明显它是非nil的
 		func (OsFs) Open(name string) (File, error) {
 		    f, e := os.Open(name)
 
