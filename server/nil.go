@@ -54,7 +54,6 @@ func main() {
 		所以它的底层结构应该是(*data, nil)，很明显它是非nil的
 		func (OsFs) Open(name string) (File, error) {
 		    f, e := os.Open(name)
-
 		    if f == nil {
 			return nil, e
 		    }
