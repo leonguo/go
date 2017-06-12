@@ -60,7 +60,8 @@ func main() {
 		    return f, e
 		}
 	 */
-
+	//invalid operation: nil == nil (operator == not defined on nil)
+	//fmt.Println(nil==nil)
 }
 
 func foo(in interface{}) {
@@ -70,3 +71,5 @@ func foo(in interface{}) {
 		fmt.Println("Nil")
 	}
 }
+
+
