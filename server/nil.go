@@ -62,6 +62,17 @@ func main() {
 	 */
 	//invalid operation: nil == nil (operator == not defined on nil)
 	//fmt.Println(nil==nil)
+
+	fmt.Printf("nil type : %T", nil)
+	//print(nil)
+
+	var m map[int]string
+	var ptr *int
+	fmt.Printf("%p", m)
+	fmt.Printf("%p", ptr)
+
+	//fmt.Printf(m == ptr)
+
 }
 
 func foo(in interface{}) {
