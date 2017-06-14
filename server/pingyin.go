@@ -1,6 +1,15 @@
 package main
 
 import (
+	"strings"
+	"gopkg.in/mgo.v2/bson"
+	"gopkg.in/mgo.v2"
+)
+
+/**
+	把中文变成拼音字母 提取首个字母
+ */
+import (
 	"fmt"
 	"github.com/mozillazg/go-pinyin"
 	"strings"
