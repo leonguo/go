@@ -219,6 +219,15 @@
         </code></pre>
         </details>
 
+        <details>
+        <summary>go 结构体 omitempty</summary>
+        <pre><code>
+        omitempty  Only include the field if it's not set to the zero
+            value for the type or to empty slices or maps.
+        go 语言结构体BSON 用omitempty时要注意 为0 空数组 空map是不会更新到mongo的。
+        </code></pre>
+        </details>
+
    - [mongodb实战](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
    - [mysql实战](https://github.com/leonguo/go/blob/master/db/mysql/mysql.md)
 
