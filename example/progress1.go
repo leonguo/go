@@ -2,8 +2,8 @@ package main
 
 import (
 	"bytes"
-	"strconv"
 	"fmt"
+	"strconv"
 )
 
 const STEP, NUM = 4, 40
@@ -16,18 +16,25 @@ var (
 
 func main() {
 	for i := range chans {
-		chans[i] = make(chan int)
+		chans[i] = make(chan int) // 无缓冲chan会阻塞goroutine
 		files[i] = new(bytes.Buffer)
+
 		go func(out chan<- int, prime int) {
 			for {
 				out <- prime
 			}
 		}(chans[i], i)
 	}
+	fmt.Println(<-chans[0])
+	fmt.Println(<-chans[1])
+	fmt.Println(<-chans[2])
+	fmt.Println(<-chans[3])
 	for j := 0; j < NUM; j++ {
 		k := <-chans[j%STEP] + 1
+
 		files[cur].WriteString(strconv.Itoa(k))
-		// 当前游标如果到达最大值 则停留一次，然后继续前进
+		// 当前游标如果到达最大值 则停留一次，然后继续前进。 最大值 K= 4 停止if判断
+		fmt.Printf(" %v >>>>>当前的游标：%v，上一次游标：%v \n", k, cur, last)
 		if k != STEP || cur == last {
 			last, cur = cur, (cur+1)%4
 		}
