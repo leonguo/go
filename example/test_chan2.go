@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"time"
 )
+
 /**
-	生产者 消费者
- */
+生产者 消费者
+*/
 func producer(c chan int, max int) {
 	for i := 0; i < max; i++ {
-		fmt.Println("i is ",i)
+		fmt.Println("i is ", i)
 		c <- i
 	}
 }
@@ -22,7 +23,7 @@ func consumer(c chan int) {
 		if value, ok = <-c; ok {
 			fmt.Println(value)
 		}
-		if ok == false{
+		if ok == false {
 			fmt.Println("*******Break********")
 		}
 	}

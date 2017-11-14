@@ -19,7 +19,7 @@ func main() {
 		fmt.Println("start doing something")
 		close(start)
 	}()
-	v , ok := <-start
+	v, ok := <-start
 	fmt.Println(v)
 	fmt.Println(ok)
 	fmt.Println("done")

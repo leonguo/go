@@ -1,13 +1,13 @@
 package main
 
 import (
-	"time"
 	"fmt"
+	"time"
 )
 
 /**
-	定时器
- */
+定时器
+*/
 
 var ch = make(chan int)
 

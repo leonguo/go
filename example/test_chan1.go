@@ -13,12 +13,12 @@ func fun1() {
 }
 func fun2() {
 	v := <-start
-	fmt.Println("This is Worker fun2 ",v)
+	fmt.Println("This is Worker fun2 ", v)
 }
 
 func main() {
 	/**
-	 channel 信号量传递
+	channel 信号量传递
 	*/
 	go fun1()
 	go fun2()
