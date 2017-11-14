@@ -40,9 +40,9 @@ func (h *SessionHeap) Push(s interface{}) {
 
 func (h *SessionHeap) Pop() interface{} {
 	l := len(*h)
-	s := (*h)[l - 1]
+	s := (*h)[l-1]
 	s.index = -1
-	*h = (*h)[:l - 1]
+	*h = (*h)[:l-1]
 	return s
 }
 
@@ -53,7 +53,7 @@ type DialContext struct {
 
 // goroutine safe
 func Dial(url string, sessionNum int) (*DialContext, error) {
-	c, err := DialWithTimeout(url, sessionNum, 10 * time.Second, 5 * time.Minute)
+	c, err := DialWithTimeout(url, sessionNum, 10*time.Second, 5*time.Minute)
 	return c, err
 }
 
