@@ -31,7 +31,7 @@ path	 	                        |                |  geometric path on a plane
 pg_lsn	 	                        |                |  PostgreSQL Log Sequence Number
 point	 	                        |                |  geometric point on a plane
 polygon	 	                        |                |  closed geometric path on a plane
-real	                            | float4	     |  single precision floating-point number (4 bytes)
+real	                            | float4	     |  单精度浮点数(4 字节)
 smallint	                        | int2	         |  有符号2字节整数
 smallserial	                        | serial2	     |  自增2字节整数
 serial	                            | serial4	     |  自增4字节整数
