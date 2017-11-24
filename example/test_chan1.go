@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"time"
+	"unsafe"
 )
 
 var start = make(chan bool)
+var start1 = make(chan struct{})
 
 func fun1() {
 	start <- true
@@ -17,6 +19,8 @@ func fun2() {
 }
 
 func main() {
+	var s struct{}
+	fmt.Println(unsafe.Sizeof(s)) // prints 0
 	/**
 	channel 信号量传递
 	*/
