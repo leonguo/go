@@ -6,10 +6,10 @@ import (
 )
 
 func main() {
-	time1 := time.NewTimer(time.Second * 5)
+	time1 := time.NewTimer(time.Second)
 
-	<-time1.C
-	fmt.Println("time 1 expired")
+	d := <-time1.C
+	fmt.Println("time 1 expired", d)
 
 	time2 := time.NewTimer(time.Second)
 
@@ -18,9 +18,12 @@ func main() {
 		fmt.Println("time 2 expired")
 	}()
 
-	stop2 := time2.Stop()
+	time.Sleep(10 * time.Second)
 
+	stop2 := time2.Stop()
 	if stop2 {
 		fmt.Println("time 2 stopped")
 	}
+	fmt.Println("end")
+
 }

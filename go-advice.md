@@ -4,9 +4,26 @@
 - [ ] go fmt 代码, 让代码更清晰
 - [ ] 多个if判断可以改成switch
 - [ ] 使用 `chan struct{}` 来传递信号
-      - `chan bool` makes it less clear, btw `struct{}` is more optimal
-- [ ] prefer `30 * time.Second` instead of `time.Duration(30) * time.Second`
-- [ ] always wrap for-select idiom to a function
+      - `chan bool` makes it less clear, btw `struct{}` 更优化  struct{}不需要占用任何内存空间
+- [ ] 使用 `30 * time.Second` 代替 `time.Duration(30) * time.Second`
+- [ ] for-select 结构 封装成 函数
+       ```
+        func main() {
+            foo()
+            fmt.Println("ending")
+        }
+
+        func foo() {
+            for {
+                select {
+                case <-time.After(time.Second):
+                    fmt.Println("hello")
+                default:
+                    return
+                }
+            }
+        }
+       ```
 - [ ] group `const` declarations by type and `var` by logic and/or type
 - [ ] every blocking or IO function call should be cancelable or at least timeoutable
 - [ ] implement `Stringer` interface for integers const values
