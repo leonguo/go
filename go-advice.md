@@ -25,7 +25,8 @@
         }
        ```
 - [ ] group `const` declarations by type and `var` by logic and/or type
-- [ ] every blocking or IO function call should be cancelable or at least timeoutable
+- [ ] every blocking or IO function 阻塞程序必须能取消或取超时机制
+
 - [ ] implement `Stringer` interface for integers const values
 - [ ] check your defer's error
   ```go
@@ -52,7 +53,7 @@
 	println(A == B)
   }
   ```
-- [ ] if you're going to omit returning params, do it explicitly
+- [ ] 省略函数返回参数：
   - so prefer this ` _ = f()` to this `f()`
 - [ ] we've a short form for slice initialization `a := []T{}`
 - [ ] iterate over array or slice using range loop
