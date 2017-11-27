@@ -70,6 +70,7 @@
     - [lua 全教程](http://ialloc.org/posts/2017/11/17/programming-in-lua/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
     - [go 语言建议](https://github.com/cristaloleg/go-advices?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
     - [postgresql 教程网站](http://www.postgresqltutorial.com/)
+    - [psql 自动更新时间](https://x-team.com/blog/automatic-timestamps-with-postgresql/)
 
 - 其它资料
 
