@@ -71,7 +71,8 @@
     - [go 语言建议](https://github.com/cristaloleg/go-advices?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
     - [postgresql 教程网站](http://www.postgresqltutorial.com/)
     - [psql 自动更新时间](https://x-team.com/blog/automatic-timestamps-with-postgresql/)
-
+    - [go的初学问题](https://zhuanlan.zhihu.com/p/26005856)
+    
 - 其它资料
 
     - [mongo 模糊查询](https://docs.mongodb.com/manual/reference/operator/query/regex/)
