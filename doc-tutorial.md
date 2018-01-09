@@ -73,6 +73,7 @@
     - [psql 自动更新时间](https://x-team.com/blog/automatic-timestamps-with-postgresql/)
     - [go的初学问题](https://zhuanlan.zhihu.com/p/26005856)
     - [loading图标](https://loading.io/)
+    - [nuxt vue应用框架](https://zh.nuxtjs.org/examples)
     
 - 其它资料
 
