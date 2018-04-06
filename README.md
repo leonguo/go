@@ -228,6 +228,28 @@
         </code></pre>
         </details>
 
+        <details>
+          <summary>for range interface{}</summary>
+           <pre>
+               <code>
+                  bool, for JSON booleans
+                  float64, for JSON numbers
+                  string, for JSON strings
+                  []interface{}, for JSON arrays
+                  map[string]interface{}, for JSON objects
+                  nil for JSON null
+                  
+                    if rec, ok := record.(map[string]interface{}); ok {
+                            for key, val := range rec {
+                                log.Printf(" [========>] %s = %s", key, val)
+                            }
+                        } else {
+                            fmt.Printf("record not a map[string]interface{}: %v\n", record)
+                        }
+               </code>
+           </pre>
+        </details>
+
    - [mongodb实战](https://github.com/leonguo/go/blob/master/db/mongodb/mongo.md)
    - [mysql实战](https://github.com/leonguo/go/blob/master/db/mysql/mysql.md)
 
